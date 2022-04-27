@@ -1,4 +1,4 @@
 # Title
 
-[link1](https://something.()com)
-[link2](https://google.(com))
+[link1](youtube.com)
+[link2](https://google.com))

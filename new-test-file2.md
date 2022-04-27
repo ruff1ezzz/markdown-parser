@@ -4,5 +4,3 @@
 
 []
 (www.fakelink.com)
-
-[realLink](www.facebook.com)
