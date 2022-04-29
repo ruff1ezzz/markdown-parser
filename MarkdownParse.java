@@ -5,22 +5,40 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 
-public class OGMarkdownParse {
+public class MarkdownParse {
 
     public static ArrayList<String> getLinks(String markdown) {
         ArrayList<String> toReturn = new ArrayList<>();
         // find the next [, then find the ], then find the (, then read link upto next )
         int currentIndex = 0;
         while(currentIndex < markdown.length()) {
+            int exclamation = markdown.indexOf("!");
+
             int openBracket = markdown.indexOf("[", currentIndex);
+            if (exclamation < openBracket && exclamation != -1) {
+                break;
+            }
             int closeBracket = markdown.indexOf("]", openBracket);
+            if (openBracket == closeBracket - 1) {
+                break;
+            }
             int openParen = markdown.indexOf("(", closeBracket);
+            if (openParen - closeBracket != 1) {
+                break;
+            }
             int closeParen = markdown.indexOf(")", openParen);
+            if (openBracket == -1 || closeBracket == -1 || openParen == -1 || closeParen == -1) {
+                break;
+            }
             toReturn.add(markdown.substring(openParen + 1, closeParen));
             currentIndex = closeParen + 1;
         }
-
-        return toReturn;
+        if (toReturn.size()> 0) {
+            return toReturn;
+        }
+        else {
+            return null;
+        }
     }
 
 
