@@ -14,41 +14,41 @@ public class MarkdownParseTest {
     }
 
 
-    // @Test
-    // public void testGetLinks2() throws IOException {
-    //     Path fileName2 = Path.of("/Users/aungbong/Documents/GitHub/markdown-parser/test-files/new-test-file1.md");
-    //     String content = Files.readString(fileName2);
-    //     ArrayList<String> links = MarkdownParse.getLinks(content);
-    //     assertEquals(List.of("youtube.com","https://google.com"), links);
+    @Test
+    public void testGetLinks2() throws IOException {
+        Path fileName2 = Path.of("/Users/aungbong/Documents/GitHub/markdown-parser/test-files/new-test-file1.md");
+        String content = Files.readString(fileName2);
+        ArrayList<String> links = MarkdownParse.getLinks(content);
+        assertEquals(List.of("youtube.com","https://google.com"), links);
 
-    // }
+    }
 
-    // @Test
-    // public void testGetLinks3() throws IOException {
-    //     Path fileName2 = Path.of("/Users/aungbong/Documents/GitHub/markdown-parser/test-files/new-test-file2.md");
-    //     String content = Files.readString(fileName2);
-    //     ArrayList<String> links = MarkdownParse.getLinks(content);
-    //     assertEquals(List.of("https://test.com"), links);
+    @Test
+    public void testGetLinks3() throws IOException {
+        Path fileName2 = Path.of("/Users/aungbong/Documents/GitHub/markdown-parser/test-files/new-test-file2.md");
+        String content = Files.readString(fileName2);
+        ArrayList<String> links = MarkdownParse.getLinks(content);
+        assertEquals(List.of("https://test.com"), links);
 
-    // }
+    }
 
-    // @Test
-    // public void testGetLinks4() throws IOException {
-    //     Path fileName2 = Path.of("/Users/aungbong/Documents/GitHub/markdown-parser/test-files/new-test-file3.md");
-    //     String content = Files.readString(fileName2);
-    //     ArrayList<String> links = MarkdownParse.getLinks(content);
-    //     assertEquals(List.of("https://test.com"), links);
+    @Test
+    public void testGetLinks4() throws IOException {
+        Path fileName2 = Path.of("/Users/aungbong/Documents/GitHub/markdown-parser/test-files/new-test-file3.md");
+        String content = Files.readString(fileName2);
+        ArrayList<String> links = MarkdownParse.getLinks(content);
+        assertEquals(List.of("https://test.com"), links);
 
-    // }
+    }
 
-    // @Test
-    // public void testGetLinksStep61() throws IOException {
-    //     Path fileName2 = Path.of("/Users/aungbong/Documents/GitHub/markdown-parser/test-files/new-test-file3.md");
-    //     String content = Files.readString(fileName2);
-    //     ArrayList<String> links = MarkdownParse.getLinks(content);
-    //     assertEquals(List.of("https://test.com"), links);
+    @Test
+    public void testGetLinksStep61() throws IOException {
+        Path fileName2 = Path.of("/Users/aungbong/Documents/GitHub/markdown-parser/test-files/new-test-file3.md");
+        String content = Files.readString(fileName2);
+        ArrayList<String> links = MarkdownParse.getLinks(content);
+        assertEquals(List.of("https://test.com"), links);
 
-    //  }
+     }
 
     @Test
     public void MarkdownParseTest1() throws IOException {
