@@ -195,4 +195,22 @@ public class MarkdownParseTest {
 
         assertEquals(res, links);
     }
+
+    @Test
+    public void MarkdownParseTest9() throws IOException {
+        Path fileName = Path.of("test-files/test-file9.md"); 
+        String content = Files.readString(fileName);
+        String[] split = content.split("\n");
+        ArrayList<String> links = new ArrayList<String>();
+        for(String s: split){
+            if(MarkdownParse.getLinks(s) != null){
+                links.addAll(MarkdownParse.getLinks(s));
+            }
+        }
+
+        ArrayList<String> res = new ArrayList<String>();
+        res.add("google.com");
+
+        assertEquals(res, links);
+    }
 }
