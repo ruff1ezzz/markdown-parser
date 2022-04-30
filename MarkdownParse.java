@@ -30,8 +30,15 @@ public class MarkdownParse {
             if (openBracket == -1 || closeBracket == -1 || openParen == -1 || closeParen == -1) {
                 break;
             }
-            toReturn.add(markdown.substring(openParen + 1, closeParen));
+            if (!markdown.substring(openParen + 1, closeParen).contains("www.") 
+                || !markdown.substring(openParen + 1, closeParen).contains(".com") ) {
+                    break;
+            }
+            else {
+                toReturn.add(markdown.substring(openParen + 1, closeParen));
             currentIndex = closeParen + 1;
+            }
+            
         }
         if (toReturn.size()> 0) {
             return toReturn;
