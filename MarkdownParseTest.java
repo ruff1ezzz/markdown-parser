@@ -209,7 +209,6 @@ public class MarkdownParseTest {
         }
 
         ArrayList<String> res = new ArrayList<String>();
-        res.add("google.com");
 
         assertEquals(res, links);
     }
