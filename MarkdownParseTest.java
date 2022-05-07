@@ -1,13 +1,10 @@
-// javac -cp .:lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar MarkdownParseTest.java
-// java -cp .:lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar org.junit.runner.JUnitCore MarkdownParseTest
-
 import static org.junit.Assert.*;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
-import java.util.List;
+
 
 import org.junit.*;
 public class MarkdownParseTest {
@@ -16,71 +13,34 @@ public class MarkdownParseTest {
         assertEquals(2, 1 + 1);
     }
 
-
-    @Test
-    public void testGetLinks2() throws IOException {
-        Path fileName2 = Path.of("test-files/new-test-file1.md");
-        String content = Files.readString(fileName2);
-        ArrayList<String> links = MarkdownParse.getLinks(content);
-        assertEquals(List.of("youtube.com","https://google.com"), links);
-
-    }
-
-    @Test
-    public void testGetLinks3() throws IOException {
-        Path fileName2 = Path.of("test-files/new-test-file2.md");
-        String content = Files.readString(fileName2);
-        ArrayList<String> links = MarkdownParse.getLinks(content);
-        assertEquals(List.of("https://test.com"), links);
-
-    }
-
-    @Test
-    public void testGetLinks4() throws IOException {
-        Path fileName2 = Path.of("test-files/new-test-file3.md");
-        String content = Files.readString(fileName2);
-        ArrayList<String> links = MarkdownParse.getLinks(content);
-        assertEquals(List.of("https://test.com"), links);
-
-    }
-
-    @Test
-    public void testGetLinksStep61() throws IOException {
-        Path fileName2 = Path.of("test-files/new-test-file3.md");
-        String content = Files.readString(fileName2);
-        ArrayList<String> links = MarkdownParse.getLinks(content);
-        assertEquals(List.of("https://test.com"), links);
-
-     }
-
     @Test
     public void MarkdownParseTest1() throws IOException {
-        Path fileName = Path.of("test-files/test-file.md"); 
+        Path fileName = Path.of("/Users/aungbong/Downloads/markdown-parser-main/newTest.md"); 
         String content = Files.readString(fileName);
         String[] split = content.split("\n");
         ArrayList<String> links = new ArrayList<String>();
         for(String s: split){
             if(MarkdownParse.getLinks(s) != null){
-                links.addAll(MarkdownParse.getLinks(s));
+                links.add(MarkdownParse.getLinks(s));
             }
         }
 
         ArrayList<String> res = new ArrayList<String>();
-        res.add("https://something.com");
-        res.add("some-thing.html");
+        res.add("https://test.com");
+        res.add("www.facebook.com");
 
         assertEquals(res, links);
     }
 
     @Test
     public void MarkdownParseTest2() throws IOException {
-        Path fileName = Path.of("test-files/test-file2.md"); 
+        Path fileName = Path.of("/Users/aungbong/Downloads/markdown-parser-main/testFiles/test-file2.md"); 
         String content = Files.readString(fileName);
         String[] split = content.split("\n");
         ArrayList<String> links = new ArrayList<String>();
         for(String s: split){
             if(MarkdownParse.getLinks(s) != null){
-                links.addAll(MarkdownParse.getLinks(s));
+                links.add(MarkdownParse.getLinks(s));
             }
         }
 
@@ -93,13 +53,13 @@ public class MarkdownParseTest {
 
     @Test
     public void MarkdownParseTest3() throws IOException {
-        Path fileName = Path.of("test-files/test-file3.md"); 
+        Path fileName = Path.of("/Users/aungbong/Downloads/markdown-parser-main/testFiles/test-file3.md"); 
         String content = Files.readString(fileName);
         String[] split = content.split("\n");
         ArrayList<String> links = new ArrayList<String>();
         for(String s: split){
             if(MarkdownParse.getLinks(s) != null){
-                links.addAll(MarkdownParse.getLinks(s));
+                links.add(MarkdownParse.getLinks(s));
             }
         }
 
@@ -111,13 +71,13 @@ public class MarkdownParseTest {
 
     @Test
     public void MarkdownParseTest4() throws IOException {
-        Path fileName = Path.of("test-files/test-file4.md"); 
+        Path fileName = Path.of("/Users/aungbong/Downloads/markdown-parser-main/testFiles/test-file4.md"); 
         String content = Files.readString(fileName);
         String[] split = content.split("\n");
         ArrayList<String> links = new ArrayList<String>();
         for(String s: split){
             if(MarkdownParse.getLinks(s) != null){
-                links.addAll(MarkdownParse.getLinks(s));
+                links.add(MarkdownParse.getLinks(s));
             }
         }
 
@@ -128,13 +88,13 @@ public class MarkdownParseTest {
 
     @Test
     public void MarkdownParseTest5() throws IOException {
-        Path fileName = Path.of("test-files/test-file5.md"); 
+        Path fileName = Path.of("/Users/aungbong/Downloads/markdown-parser-main/testFiles/test-file5.md"); 
         String content = Files.readString(fileName);
         String[] split = content.split("\n");
         ArrayList<String> links = new ArrayList<String>();
         for(String s: split){
             if(MarkdownParse.getLinks(s) != null){
-                links.addAll(MarkdownParse.getLinks(s));
+                links.add(MarkdownParse.getLinks(s));
             }
         }
 
@@ -146,13 +106,13 @@ public class MarkdownParseTest {
 
     @Test
     public void MarkdownParseTest6() throws IOException {
-        Path fileName = Path.of("test-files/test-file6.md"); 
+        Path fileName = Path.of("/Users/aungbong/Downloads/markdown-parser-main/testFiles/test-file6.md"); 
         String content = Files.readString(fileName);
         String[] split = content.split("\n");
         ArrayList<String> links = new ArrayList<String>();
         for(String s: split){
             if(MarkdownParse.getLinks(s) != null){
-                links.addAll(MarkdownParse.getLinks(s));
+                links.add(MarkdownParse.getLinks(s));
             }
         }
 
@@ -163,13 +123,13 @@ public class MarkdownParseTest {
 
     @Test
     public void MarkdownParseTest7() throws IOException {
-        Path fileName = Path.of("test-files/test-file7.md"); 
+        Path fileName = Path.of("/Users/aungbong/Downloads/markdown-parser-main/testFiles/test-file7.md"); 
         String content = Files.readString(fileName);
         String[] split = content.split("\n");
         ArrayList<String> links = new ArrayList<String>();
         for(String s: split){
             if(MarkdownParse.getLinks(s) != null){
-                links.addAll(MarkdownParse.getLinks(s));
+                links.add(MarkdownParse.getLinks(s));
             }
         }
 
@@ -181,13 +141,13 @@ public class MarkdownParseTest {
 
     @Test
     public void MarkdownParseTest8() throws IOException {
-        Path fileName = Path.of("test-files/test-file8.md"); 
+        Path fileName = Path.of("/Users/aungbong/Downloads/markdown-parser-main/testFiles/test-file8.md"); 
         String content = Files.readString(fileName);
         String[] split = content.split("\n");
         ArrayList<String> links = new ArrayList<String>();
         for(String s: split){
             if(MarkdownParse.getLinks(s) != null){
-                links.addAll(MarkdownParse.getLinks(s));
+                links.add(MarkdownParse.getLinks(s));
             }
         }
 
@@ -198,13 +158,14 @@ public class MarkdownParseTest {
 
     @Test
     public void MarkdownParseTest9() throws IOException {
-        Path fileName = Path.of("test-files/test-file9.md"); 
+        Path fileName = Path.of("/Users/aungbong/Downloads/markdown-parser-main/testFiles/test-file9.md"); 
         String content = Files.readString(fileName);
         String[] split = content.split("\n");
         ArrayList<String> links = new ArrayList<String>();
         for(String s: split){
-            if(MarkdownParse.getLinks(s) != null){
-                links.addAll(MarkdownParse.getLinks(s));
+            String link = MarkdownParse.getLinks(s);
+            if(link != null && MarkdownParse.isValidLink(link)){
+                links.add(MarkdownParse.getLinks(s));
             }
         }
 
@@ -212,4 +173,12 @@ public class MarkdownParseTest {
 
         assertEquals(res, links);
     }
+
+    @Test
+    public void product() {
+        assertEquals(1, 1 * 1);
+    }
+
+
+
 }
